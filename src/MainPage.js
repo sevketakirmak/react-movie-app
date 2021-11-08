@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { fetchList, fetchListTv, getMovieId } from './actions';
+import { fetchList, fetchListTv, getMovieId, getType } from './actions';
 import { Link } from "react-router-dom";
 import Search from './components/Search';
 import Slider from 'react-slick';
@@ -52,7 +52,7 @@ class MainPage extends React.Component {
         });
 
         const renderListTv = this.props.tvList.map((post) => {
-            return (<Link key={post.id} onClick={()=> {this.props.getMovieId(post.id); this.setState({search:'' });}} to="/movie-detail"><Card key={post.id} post={post} /></Link>);
+            return (<Link key={post.id} onClick={()=> {this.props.getMovieId(post.id); this.props.getType(post.media_type); this.setState({search:'' });}} to="/movie-detail"><Card key={post.id} post={post} /></Link>);
         });
         return (
             <div>
@@ -81,4 +81,4 @@ const mapState = (state) => {
     return { list: state.list, tvList: state.tvList }
 }
 
-export default connect(mapState, { fetchList, fetchListTv, getMovieId })(MainPage);
+export default connect(mapState, { fetchList, fetchListTv, getMovieId, getType })(MainPage);

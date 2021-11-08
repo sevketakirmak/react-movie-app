@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { fetchMovie, fetchDetail, getMovieId } from "../actions";
+import { fetchMovie, getMovieId, getType } from "../actions";
 import "./Search.css"
 
 class Search extends React.Component {
@@ -35,7 +35,17 @@ class Search extends React.Component {
 
     render() {
         const renderList = this.props.movie.slice(0, 5).map((post) => {
-            if (this.state.search !== '') { return <Link key={post.id} onClick={()=> {this.props.getMovieId(post.id); this.setState({search:'' });}} to="/movie-detail"><li><span>{post.original_title}</span></li></Link> }
+            if (this.state.search !== '') {
+                return (
+                    <Link key={post.id} onClick={() => { this.props.getMovieId(post.id); this.props.getType(post.media_type); this.setState({ search: '' }); }} to="/movie-detail">
+                        <li>
+                            <span>
+                                {post.media_type === "movie" ? post.original_title : post.name}
+                            </span>
+                            <span>{post.media_type}</span>
+                        </li>
+                    </Link>);
+            }
             else return ''
         });
 
@@ -56,4 +66,4 @@ const mapState = (state) => {
     return { movie: state.movie }
 }
 
-export default connect(mapState, { fetchMovie, getMovieId })(Search);
+export default connect(mapState, { fetchMovie, getMovieId, getType })(Search);

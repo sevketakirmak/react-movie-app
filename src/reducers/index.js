@@ -10,13 +10,19 @@ const movieIdReducer = (movieID = "438631", action) =>{
     }
     return movieID;
 }
-
+const movieTypeReducer = (media_type = "movie", action) =>{
+    if (action.type === 'GET_TYPE'){
+        return action.payload;
+    }
+    return media_type;
+}
 export default combineReducers(
     {
         movie: movieReducer,
         list: listReducer,
         tvList: tvReducer,
         details: movieDetailReducer,
-        movieID: movieIdReducer
+        movieID: movieIdReducer,
+        movieType: movieTypeReducer
     }
 );

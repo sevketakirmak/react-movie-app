@@ -39,6 +39,11 @@
     padding: 10px;
     border-bottom: 1px solid #adadad52;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+.dropdown ul li span:last-child{
+    text-transform: uppercase;
 }
 .dropdown a{
     color: #adadad;

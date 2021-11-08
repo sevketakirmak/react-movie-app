@@ -5,7 +5,7 @@ export const fetchMovie = (searchKey) => async (dispatch) => {
         dispatch({ type: 'FETCH_MOVIE', payload: [] });
     }
     else {
-        const response = await getMovies.get('/search/movie', {
+        const response = await getMovies.get('/search/multi', {
             params: {
                 query: searchKey
             }
@@ -26,15 +26,21 @@ export const fetchListTv = () => async (dispatch) => {
     dispatch({ type: 'FETCH_LIST_TV', payload: response.data.results });
 }
 
-export const fetchDetail = (movieID) => async (dispatch) => {
+export const fetchDetail = (movieID, media_type) => async (dispatch) => {
 
-    const response = await getMovies.get(`/movie/${movieID}`);
+    const response = await getMovies.get(`/${media_type}/${movieID}`);
 
     dispatch({ type: 'FETCH_DETAIL', payload: response.data });
 }
 export const getMovieId = (movieID) =>{
     return{
         type: 'GET_MOVIEID',
+        payload: movieID
+    };
+}
+export const getType = (movieID) =>{
+    return{
+        type: 'GET_TYPE',
         payload: movieID
     };
 }
