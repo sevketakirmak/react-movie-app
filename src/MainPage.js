@@ -48,7 +48,7 @@ class MainPage extends React.Component {
             ]
         };
         const renderListMovie = this.props.list.map((post) => {
-            return (<Link key={post.id} onClick={()=> {this.props.getMovieId(post.id); this.setState({search:'' });}} to="/movie-detail"><Card key={post.id} post={post} /></Link>);
+            return (<Link key={post.id} onClick={()=> {this.props.getMovieId(post.id); this.props.getType(post.media_type); this.setState({search:'' });}} to="/movie-detail"><Card key={post.id} post={post} /></Link>);
         });
 
         const renderListTv = this.props.tvList.map((post) => {
