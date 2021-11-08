@@ -1,0 +1,25 @@
+.menu{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px 10px 25px;
+    border-bottom: 1px solid #adadad59;
+}
+.menu a{
+    text-decoration: none;
+    color: #ADADAD;
+    margin-left: 10px;
+}
+.menu input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #adadad;
+    color: #ADADAD!important;
+    height: 30px;
+    outline: none;
+}
+.menu input:focus{
+    border-bottom: 1px solid #adadad;
+}
+.menu input::placeholder{
+    color: #ADADAD;
+}

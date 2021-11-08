@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap");
+body {
+    background-color: #0b090a;
+    color: #adadad;
+    font-family: Titillium Web;
+    font-weight: 600;
+    margin: 0;
+}
+.slide h2{
+    margin: 20px 25px 10px 25px;
+
+}
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.image::before{
+    position: relative;
+    content: '';
+    top: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    background: rgba(0,0,0,.6);
+}
+.slick-list {margin: 0 -25px;}
+.slick-slide>div {padding: 0 25px; padding-bottom: 20px;}
+.slide a{
+    color: #adadad;
+    text-decoration: none;
+}
+/*responsive*/
+@media only screen and (max-width: 1200px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media only screen and (max-width: 992px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}

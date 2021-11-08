@@ -1,0 +1,83 @@
+
+.movie-bg{
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    background-position-x: center;
+    display: flex;
+    align-items: end;
+}
+.movie-bg::before{
+    position: relative;
+    content: '';
+    top: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background: rgba(0,0,0,.6);
+}
+.movie-name {
+    position: absolute;
+    padding: 25px;
+    z-index: 3;
+}
+.genres span:first-child{
+    padding-left: 0;
+}
+.genres span{
+    padding-left: 15px;
+}
+.movie-details{
+    display: flex;
+    margin-left: 25px;
+    margin-right: 25px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.movie-details img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.movie-details .poster{
+    flex: 1;
+    height: 450px;
+}
+.movie-details .overview{
+    flex: 3;
+    padding: 25px;
+    padding-right: 0;
+    text-align: justify;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex h3{
+    flex: 1;
+}
+.movie-bg .input-div{
+    right: 0;
+    top: 0;
+    margin-top: 60px;
+    margin-right: 25px;
+}
+.movie-bg .dropdown{
+    position: relative;
+}
+@media only screen and (max-width: 800px) {
+    .movie-details .poster {
+        flex: 100%;
+        height: auto;
+    }
+    .movie-details .overview{
+        flex: 100%;
+        padding: 0;
+    }
+    .flex h3{
+        flex: 50%;
+    }
+}

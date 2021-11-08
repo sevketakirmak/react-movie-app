@@ -1,0 +1,55 @@
+.input-div{
+    position: absolute;
+    z-index: 5;
+    width: 50%;
+    text-align: center;
+    border-bottom: 4px solid #adadad;
+}
+.input-div input{
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    color: #adadad;
+    border: none;
+    outline: none;
+}
+.input-div input{
+    font-weight: 800;
+}
+.cards {
+    margin: 20px 25px 10px 25px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+}
+.dropdown{
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+.dropdown ul{
+    padding: 0;
+    margin:0;
+    background-color: rgba(0, 0, 0, 0.8);
+    list-style-type: none;
+    text-align: left;
+    position: absolute;
+    width: 100%;
+}
+.dropdown ul li{
+    padding: 10px;
+    border-bottom: 1px solid #adadad52;
+    cursor: pointer;
+}
+.dropdown a{
+    color: #adadad;
+    text-decoration: none;
+}
+.dropdown a:hover{
+    color: #adadadc2;
+}
+@media only screen and (max-width: 600px) {
+    .input-div {
+        width: 80%;
+    }
+}
