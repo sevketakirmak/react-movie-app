@@ -8,6 +8,7 @@
     background-position-x: center;
     display: flex;
     align-items: end;
+    -webkit-align-items: end;
 }
 .movie-bg::before{
     position: relative;
