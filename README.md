@@ -1,6 +1,6 @@
 # TMDB Search App
 
-Live deme [here](https://movie-app-2-3.herokuapp.com/).
+Live demo [here](https://movie-app-2-3.herokuapp.com/).
 
 # Getting Started with Create React App
 
