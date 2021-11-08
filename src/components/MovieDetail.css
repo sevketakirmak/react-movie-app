@@ -7,8 +7,8 @@
     height: 450px;
     background-position-x: center;
     display: flex;
-    align-items: end;
-    -webkit-align-items: end;
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
 }
 .movie-bg::before{
     position: relative;
