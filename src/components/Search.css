@@ -12,9 +12,8 @@
     color: #adadad;
     border: none;
     outline: none;
-}
-.input-div input{
     font-weight: 800;
+    font-size: 16px!important;
 }
 .cards {
     margin: 20px 25px 10px 25px;
