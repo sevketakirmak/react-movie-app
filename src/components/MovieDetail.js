@@ -7,12 +7,10 @@ var numeral = require('numeral');
 
 class MovieDetail extends React.Component {
 
-    state = { search: '' };
 
     componentDidMount() {
         this.props.fetchMovie('');
         this.props.fetchDetail(this.props.movieID, this.props.movieType);
-        this.setState({ search: this.props.movieID });
     }
     componentDidUpdate(prevProps) {
         if (this.props.movieID !== prevProps.movieID) {
